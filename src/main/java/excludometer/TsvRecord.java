@@ -9,6 +9,7 @@ import java.util.Map;
 public class TsvRecord {
 
     int lineNo;
+    String source;
     String chromosome;
     String position;
     String PreferredSymbol;
@@ -26,6 +27,7 @@ public class TsvRecord {
     public TsvRecord(Map<String, Integer> tsvColMap, String tsvLine, int lineNo) {
         this.lineNo = lineNo;
         String[] fields = tsvLine.split("\t",-1);
+        source = fields[tsvColMap.get("source")];
         chromosome = fields[tsvColMap.get("chromosome")].replace("chr", "");
         position = fields[tsvColMap.get("position")];
         PreferredSymbol = fields[tsvColMap.get("PreferredSymbol")];

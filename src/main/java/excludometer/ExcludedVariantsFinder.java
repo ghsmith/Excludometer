@@ -62,22 +62,13 @@ public class ExcludedVariantsFinder {
                     variant.detected++;
                 }
             }
-            logger.info(String.format("[%3d/%3d] %s", x, variants.length, variant));
+            if(x % 10 == 0) {
+                logger.info(String.format("[%3d/%3d] retreiving excluded variants from GO...", x, variants.length));
+            }
         }
         
         return variants;
         
-    }
-
-    public Map<String, Variant> findByOrderIdMap(String orderId) {
-        Map<String, Variant> variantMap = new HashMap<>();
-        for(Variant variant : findByOrderId(orderId)) {
-            if(variantMap.get(variant.genomeHash) != null) {
-                throw new RuntimeException(String.format("error - duplicate hash", variant.genomeHash));
-            }
-            variantMap.put(variant.genomeHash, variant);
-        }
-        return variantMap;
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)

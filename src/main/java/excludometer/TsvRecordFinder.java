@@ -26,7 +26,8 @@ public class TsvRecordFinder {
                 tsvColMap.put(col, x++);
             }
             if(!(
-                    tsvColMap.get("chromosome") == 2
+                    tsvColMap.get("source") == 0
+                    && tsvColMap.get("chromosome") == 2
                     && tsvColMap.get("position") == 3
                     && tsvColMap.get("PreferredSymbol") == 51
                     && tsvColMap.get("reference") == 4
