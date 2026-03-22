@@ -49,9 +49,9 @@ public class Excludometer {
         System.out.println();
         System.out.println("BOOLEAN CONDITIONS");
         System.out.println();
-        System.out.println("Group 1:");
-        System.out.println("1 - Source is not LowFreq variant caller. [NOTE 1]");
-        System.out.println("2 - Source is LowFreq variant caller, but AF >= 1.5%. [NOTE 1]");
+        System.out.println("Group 1 (not used in 'Pathogenic' tab):");
+        System.out.println("1 - Source is not LowFreq variant caller.");
+        System.out.println("2 - Source is LowFreq variant caller, but AF >= 1.5%.");
         System.out.println();
         System.out.println("Group 2:");
         System.out.println("3 - Source is HotSpot variant caller.");
@@ -60,9 +60,9 @@ public class Excludometer {
         System.out.println("6 - Detected count > 0.");
         System.out.println("7 - Total count < 100.");
         System.out.println();
-        System.out.println("Group 3:");
-        System.out.println("8 - Has no strand or sequence bias. [NOTE 1 & 2]");
-        System.out.println("9 - Meets 'Archer Myeloid w/Outlier' criteria. [NOTE 1 & 2]");
+        System.out.println("Group 3 (not used in 'Pathogenic' or 'Synonymous' tabs):");
+        System.out.println("8 - Has no strand or sequence bias.");
+        System.out.println("9 - Meets 'Archer Myeloid w/Outlier' criteria.");
         System.out.println();
         System.out.println("Group 4:");
         System.out.println("A - Total count < 200.");
@@ -70,9 +70,6 @@ public class Excludometer {
         System.out.println("C - AF >= 3%.");
         System.out.println();
         System.out.println("A variant exclusion is valid when: (1 OR 2) AND (3 OR 4 OR 5 OR 6 OR 7) AND (8 OR 9) AND (A OR B OR C) == FALSE.");
-        System.out.println();
-        System.out.println("[NOTE 1] Not used in 'Pathogenic' tab.");
-        System.out.println("[NOTE 2] Not used in 'Synonymous' tab.");
         System.out.println();
         
         String fileName;
