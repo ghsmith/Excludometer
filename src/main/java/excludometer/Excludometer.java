@@ -114,7 +114,7 @@ public class Excludometer {
 
                 boolean b4_A_CountTotalLessThan200 = variant.total < 200;
                 boolean b4_B_CountDetectedGreaterThan2 = variant.detected > 2;
-                boolean b4_C_AFAtLeast3 = Float.valueOf(tsvRecord.AF) >= 3f;
+                boolean b4_C_AFAtLeast3 = Float.valueOf(tsvRecord.AF) >= 0.03f;
 
                 String booleanString = null;
 
