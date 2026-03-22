@@ -60,7 +60,7 @@ public class Excludometer {
         System.out.println("6 - Detected count > 0.");
         System.out.println("7 - Total count < 100.");
         System.out.println();
-        System.out.println("Group 3 (not used in 'Pathogenic' or 'Synonymous' tabs):");
+        System.out.println("Group 3 (not used in 'Pathogenic', 'Synonymous', or 'Artifact' tabs):");
         System.out.println("8 - Has no strand or sequence bias.");
         System.out.println("9 - Meets 'Archer Myeloid w/Outlier' criteria.");
         System.out.println();
