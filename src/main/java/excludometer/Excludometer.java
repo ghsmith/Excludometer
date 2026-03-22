@@ -30,7 +30,7 @@ public class Excludometer {
             "aachange"
         ));
 
-        System.out.print(String.format("\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s",
+        System.out.print(String.format("\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s",
             "classification",
             "mutationType",
             "source",
@@ -40,8 +40,7 @@ public class Excludometer {
             "seqDirBias",
             "archerMyeloid",
             "countDet",
-            "countTot",
-            "gnomadAF"
+            "countTot"
         ));
         
         System.out.println();
@@ -182,7 +181,7 @@ public class Excludometer {
                     variant.aaChange
                 ));
 
-                System.out.print(String.format("\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%d\t%s",
+                System.out.print(String.format("\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\t%d",
                     variant.classification,
                     variant.mutationTypeDisplay,
                     tsvRecord.source,
@@ -192,8 +191,7 @@ public class Excludometer {
                     tsvRecord.HasSeqDirBias,
                     tsvRecord.isArcherMyeloidWithOutlier(),
                     variant.detected,
-                    variant.total,
-                    tsvRecord.gnomAD_AF
+                    variant.total
                 ));
                 
                 if(args.length > 2) {
