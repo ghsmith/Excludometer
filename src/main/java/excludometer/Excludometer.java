@@ -188,6 +188,18 @@ public class Excludometer {
                     variant.detected,
                     variant.total
                 ));
+                
+                if(args.length > 2) {
+                    System.out.print(String.format("\tAO=%s, UAO=%s, gnomad_AF=%s, AF_Outlier_Pvalue=%s, AF=%s, HasSeqDirBias=%s, consequence=%s",
+                        tsvRecord.AO,
+                        tsvRecord.UAO,
+                        tsvRecord.gnomAD_AF,
+                        tsvRecord.AF_Outlier_Pvalue,
+                        tsvRecord.AF,
+                        tsvRecord.HasSeqDirBias,
+                        tsvRecord.consequence
+                    ));
+                }
 
                 System.out.println();
 
