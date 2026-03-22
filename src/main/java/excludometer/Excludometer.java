@@ -30,7 +30,7 @@ public class Excludometer {
             "aachange"
         ));
 
-        System.out.print(String.format("\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s",
+        System.out.print(String.format("\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s",
             "classification",
             "mutationType",
             "source",
