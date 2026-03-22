@@ -45,7 +45,7 @@ public class TsvRecord {
 
     public boolean isArcherMyeloidWithOutlier() {
         if(
-            && (AO == null || AO.length() == 0 || Integer.valueOf(AO) >= 5)
+               (AO == null || AO.length() == 0 || Integer.valueOf(AO) >= 5)
             && (UAO == null || UAO.length() == 0 || Integer.valueOf(UAO) >= 3)
             && (gnomAD_AF == null || gnomAD_AF.length() == 0 || Float.valueOf(gnomAD_AF) <= 0.05f)
             && (AF_Outlier_Pvalue == null || AF_Outlier_Pvalue.length() == 0 || Float.valueOf(AF_Outlier_Pvalue) <= 0.01f)
