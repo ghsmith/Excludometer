@@ -43,6 +43,12 @@ public class Excludometer {
             "countTot"
         ));
         
+        if(args.length > 2) {
+            System.out.print(String.format("\t%s",
+                "archerMyeloidDetails"
+            ));
+        }
+
         System.out.println();
         
         System.out.println();
@@ -197,14 +203,14 @@ public class Excludometer {
                 ));
                 
                 if(args.length > 2) {
-                    System.out.print(String.format("\t[AO=%s, UAO=%s, gnomad_AF=%s, AF_Outlier_Pvalue=%s, AF=%s, HasSeqDirBias=%s, consequence=%s]",
+                    System.out.print(String.format("\t[AO=%s, UAO=%s, gnomad_AF=%s, AF_Outlier_Pvalue=%s, AF=%s, HasSeqDirBias=%s, uniqueConsequences=%s]",
                         tsvRecord.AO,
                         tsvRecord.UAO,
                         tsvRecord.gnomAD_AF,
                         tsvRecord.AF_Outlier_Pvalue,
                         tsvRecord.AF,
                         tsvRecord.HasSeqDirBias,
-                        tsvRecord.consequence
+                        tsvRecord.getUniqueConsequences()
                     ));
                 }
 

@@ -1,5 +1,7 @@
 package excludometer;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -98,6 +100,16 @@ public class TsvRecord {
             return String.format("%s%010d%s_%s", hashChr, hashPos, hashRef, hashMut);
         }
 
+    }
+
+    public String getUniqueConsequences() {
+        List<String> uniqueConsequences = new ArrayList<>();
+        for(String consequenceItem : consequence.split("\\|")) {
+            if(!uniqueConsequences.contains(consequenceItem)) {
+                uniqueConsequences.add(consequenceItem);
+            }
+        }
+        return uniqueConsequences.toString();
     }
 
     public static String[] consequenceFilters = {
