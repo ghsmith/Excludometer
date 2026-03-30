@@ -16,7 +16,7 @@ public class Excludometer {
 
     static final Logger logger = Logger.getLogger(Excludometer.class.getName());
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         System.out.print(String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s",
             "order",

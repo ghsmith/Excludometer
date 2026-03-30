@@ -23,7 +23,7 @@ public class ExcludedVariantsFinder {
     String u;
     String p;
     
-    public Variant[] findByOrderId(String orderId) {
+    public Variant[] findByOrderId(String orderId) throws InterruptedException {
         
         ClientConfig cc = new ClientConfig().connectorProvider(new ApacheConnectorProvider());  
         cc.register(JacksonFeature.class);
@@ -36,6 +36,7 @@ public class ExcludedVariantsFinder {
             client.target("https://goprod.eushc.org/clinical-app/workbench/permissions")
                 .request()
                 .get();
+            Thread.sleep(100);
         }
         
         Variant[] variants;
@@ -45,6 +46,7 @@ public class ExcludedVariantsFinder {
             variants = client.target(String.format("https://goprod.eushc.org/clinical-app/workbench/analyses/%s-Combo/SNV/excludedVariants", orderId))
                 .request()
                 .get(Variant[].class);
+            Thread.sleep(100);
         }
 
         // get the counts for each variant
@@ -54,6 +56,7 @@ public class ExcludedVariantsFinder {
             VariantDTO variantDTO = client.target(String.format("https://goprod.eushc.org/clinical-app/reportedmuts?ref=%s&chromosome=%s&start=%s&alt=%s", variant.ref, variant.chromosome, variant.start, variant.alt))
                 .request()
                 .get(VariantDTO.class);
+            Thread.sleep(100);
             for(ReportedDTO reportedDTO : variantDTO.reportedMuts) {
                 variant.total++;
                 if(reportedDTO.detected) {
