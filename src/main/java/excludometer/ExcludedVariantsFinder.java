@@ -63,15 +63,17 @@ public class ExcludedVariantsFinder {
         int x = 0;
         for(Variant variant : variants) {
             x++;
-            VariantDTO variantDTO = client.target(String.format("https://goprod.eushc.org/clinical-app/reportedmuts?ref=%s&chromosome=%s&start=%s&alt=%s", variant.ref, variant.chromosome, variant.start, variant.alt))
-                .request()
-                .cookie(jSessionId)
-                .get(VariantDTO.class);
-            Thread.sleep(100);
-            for(ReportedDTO reportedDTO : variantDTO.reportedMuts) {
-                variant.total++;
-                if(reportedDTO.detected) {
-                    variant.detected++;
+            if(variant.reason.equals("CriteriaNotMet")) {
+                VariantDTO variantDTO = client.target(String.format("https://goprod.eushc.org/clinical-app/reportedmuts?ref=%s&chromosome=%s&start=%s&alt=%s", variant.ref, variant.chromosome, variant.start, variant.alt))
+                    .request()
+                    .cookie(jSessionId)
+                    .get(VariantDTO.class);
+                Thread.sleep(100);
+                for(ReportedDTO reportedDTO : variantDTO.reportedMuts) {
+                    variant.total++;
+                    if(reportedDTO.detected) {
+                        variant.detected++;
+                    }
                 }
             }
             if(x % 10 == 0) {
